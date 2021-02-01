@@ -19,14 +19,25 @@ public class PracticaGitHubArrays {
         Scanner sc= new Scanner (System.in);
         
         int numeros[]= new int [10];
+        boolean posicion;
+        int numBuscar=0;
+        
         
         for (int i = 0; i < numeros.length; i++) {
-            System.out.println("Anota un numero en la casilla " + (i+1));
-            numeros[i]=sc.nextInt();
             
+                System.out.println("Anota un numero en la casilla " + (i+1));
+                numeros[i]=sc.nextInt();
+             /*   posicion=buscarRepetido(numeros,numBuscar);*/
+             
+             for (int j = 0; j < i; j++) {
+                 if(numeros[i]==numeros[j]){
+                 System.out.println("Numero repetido, no valido");
+                 i--;}
+            }  
         }
-        
-        System.out.println("Los numeros leidos de menos a mayor son: ");
+               
+          
+        System.out.println("Los numeros leidos de menor a mayor son: ");
         Arrays.sort(numeros);
         for (int i = 0; i < numeros.length; i++) {
             System.out.println(numeros[i]);
@@ -34,4 +45,9 @@ public class PracticaGitHubArrays {
         }
     }
     
-}
+    
+      
+    
+    } 
+    
+
