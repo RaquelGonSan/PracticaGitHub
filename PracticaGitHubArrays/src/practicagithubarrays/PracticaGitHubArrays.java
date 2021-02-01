@@ -18,16 +18,24 @@ public class PracticaGitHubArrays {
         // TODO code application logic here
         Scanner sc= new Scanner (System.in);
         
-        int numeros[]= new int [10];
-        boolean posicion;
-        int numBuscar=0;
+        int numLeer;
+        int cont=0;
+        
+        do{
+        System.out.println("Introduce cuantos numeros desea leer: ");
+        numLeer=sc.nextInt();
+        if(numLeer>10){
+            System.out.println("No pueden ser mas de 10 numeros");}
+        }while(numLeer>10);
+        
+        int numeros[]= new int[numLeer];
         
         
-        for (int i = 0; i < numeros.length; i++) {
+        for (int i = 0; i < numeros.length && cont<10; i++) {
             
                 System.out.println("Anota un numero en la casilla " + (i+1));
                 numeros[i]=sc.nextInt();
-             /*   posicion=buscarRepetido(numeros,numBuscar);*/
+                cont++;
              
              for (int j = 0; j < i; j++) {
                  if(numeros[i]==numeros[j]){
@@ -35,7 +43,6 @@ public class PracticaGitHubArrays {
                  i--;}
             }  
         }
-               
           
         System.out.println("Los numeros leidos de menor a mayor son: ");
         Arrays.sort(numeros);
