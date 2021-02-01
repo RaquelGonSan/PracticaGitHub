@@ -20,13 +20,20 @@ public class PracticaGitHubArrays {
         
         int numLeer;
         int cont=0;
-        
-        do{
+        boolean tamValidado;
+      
+    do{    
+        /*do{       */
         System.out.println("Introduce cuantos numeros desea leer: ");
         numLeer=sc.nextInt();
-        if(numLeer>10){
+        tamValidado=validarTamaño(numLeer);
+        /*if(numLeer>10){
             System.out.println("No pueden ser mas de 10 numeros");}
-        }while(numLeer>10);
+        }while(numLeer>10); */
+        if(!tamValidado){
+            System.out.println("No pueden ser mas de 10 numeros");
+        }
+    }while(!tamValidado);
         
         int numeros[]= new int[numLeer];
         
@@ -50,6 +57,12 @@ public class PracticaGitHubArrays {
             System.out.println(numeros[i]);
             
         }
+    }
+    public static boolean validarTamaño(int num){
+        if(num>10){
+        return false;}
+        return true;
+    
     }
     
     
