@@ -20,10 +20,17 @@ public class PracticaGitHubArrays {
         
         int numLeer;
         int cont=0;
+
         boolean tamValidado;
       
     do{    
         /*do{       */
+
+        int numBuscar;
+        int encontrado;
+        
+        do{
+
         System.out.println("Introduce cuantos numeros desea leer: ");
         numLeer=sc.nextInt();
         tamValidado=validarTamaño(numLeer);
@@ -50,6 +57,15 @@ public class PracticaGitHubArrays {
                  i--;}
             }  
         }
+        
+        System.out.println("Introduce el numero que quiere buscar");
+        numBuscar=sc.nextInt();
+        encontrado=buscarNumero(numeros,numBuscar);
+        if(encontrado==-1){
+            System.out.println("Numero no encontrado");
+        }
+        else
+            System.out.println("Numero " +numBuscar+ " encontrado en la casilla " +(encontrado+1));
           
         System.out.println("Los numeros leidos de menor a mayor son: ");
         Arrays.sort(numeros);
@@ -58,11 +74,22 @@ public class PracticaGitHubArrays {
             
         }
     }
+    
     public static boolean validarTamaño(int num){
         if(num>10){
         return false;}
         return true;
     
+
+    public static int buscarNumero(int n[], int numBuscar){
+        for (int i = 0; i < n.length; i++) {
+            if(n[i]==numBuscar){
+            return i;
+            }
+            
+        }
+        return -1;
+
     }
     
     
